@@ -227,7 +227,7 @@ const Contact: React.FC = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <div className="h-full min-h-[500px] relative">
-                <iframe
+                {/* <iframe
                   src="https://maps.app.goo.gl/Yu1ycFCX5CMR9nto9"
                   width="100%"
                   height="100%"
@@ -237,7 +237,8 @@ const Contact: React.FC = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                   title="LIIT Location"
                   className="absolute inset-0"
-                />
+                /> */}
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15863.30389221341!2d-10.777207948646556!3d6.286592528550671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf0a029ab9cb5bd5%3A0x950de9f0e0405ef!2sAirfield%20Shortcut%2C%20Monrovia%2C%20Liberia!5e0!3m2!1sen!2s!4v1750633005826!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 <div className="absolute bottom-4 left-4 bg-white p-4 rounded-lg shadow-lg">
                   <h3 className="font-semibold text-gray-900 mb-1">LIIT Campus</h3>
                   <p className="text-sm text-gray-600">Barole Practice Ground</p>
