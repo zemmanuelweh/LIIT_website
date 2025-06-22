@@ -5,22 +5,22 @@ import { Target, Eye, Heart, Award, Users, BookOpen } from 'lucide-react';
 const About: React.FC = () => {
   const leadership = [
     {
-      name: 'Dr. Patricia Williams',
-      position: 'President & CEO',
+      name: 'Mr. Amoss Bardyl',
+      position: 'President & Lead founder',
       image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Dr. Williams brings over 20 years of experience in higher education and technology leadership.'
+      bio: 'Mr Bardyl brings over 5 years of experience in higher education and technology leadership.'
     },
     {
-      name: 'Prof. James Kollie',
-      position: 'Academic Director',
+      name: 'Dr Standley ',
+      position: 'Director of Programs',
       image: 'https://images.pexels.com/photos/937481/pexels-photo-937481.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Prof. Kollie oversees all academic programs and curriculum development at LIST.'
+      bio: 'Mr Weh oversees all academic programs and curriculum development at LIIT.'
     },
     {
-      name: 'Dr. Mary Togba',
-      position: 'Director of Student Affairs',
+      name: 'Emmanuel Weh',
+      position: 'Co-founder & Director of Student Affairs',
       image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400',
-      bio: 'Dr. Togba ensures student success through comprehensive support services and programs.'
+      bio: 'Mr Weh ensures student success through comprehensive support services and programs.'
     }
   ];
 
