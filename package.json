@@ -1,5 +1,5 @@
 {
-  "name": "list-educational-website",
+  "name": "liit-educational-website",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,17 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "backend:dev": "cd backend && npm run develop",
-    "backend:build": "cd backend && npm run build",
-    "backend:start": "cd backend && npm run start",
-    "start:all": "concurrently \"npm run backend:dev\" \"npm run dev\"",
-    "setup": "cd backend && npm install && cd .. && npm install"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@hookform/resolvers": "^3.3.0",
-    "@strapi/plugin-documentation": "^5.16.0",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^11.0.0",
     "lucide-react": "^0.344.0",
@@ -33,7 +27,6 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.18",
-    "concurrently": "^8.2.2",
     "eslint": "^9.9.1",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.11",

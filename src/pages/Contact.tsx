@@ -4,10 +4,6 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
-import emailjs from '@emailjs/browser';
-
-// Initialize EmailJS with your public key
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY!);
 
 const schema = yup.object({
   name: yup.string().required('Name is required'),
@@ -30,43 +26,15 @@ const Contact: React.FC = () => {
     try {
       setIsSubmitting(true);
       
-      // Send email to sales team
-      const salesTemplateParams = {
-        from_name: data.name,
-        from_email: data.email,
-        subject: data.subject,
-        message: data.message,
-        to_email: 'sales@yourcompany.com',
-        date: new Date().toLocaleString()
-      };
-
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
-        import.meta.env.VITE_EMAILJS_SALES_TEMPLATE_ID!,
-        salesTemplateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
-      );
-
-      // Send confirmation email to client
-      const clientTemplateParams = {
-        to_name: data.name,
-        to_email: data.email,
-        subject: `We've received your message: ${data.subject}`,
-        company_name: 'Your Company'
-      };
-
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
-        import.meta.env.VITE_EMAILJS_CLIENT_TEMPLATE_ID!,
-        clientTemplateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
-      );
+      // Simulate form submission
+      console.log('Contact form data:', data);
+      await new Promise(resolve => setTimeout(resolve, 1000));
 
       setIsSubmitted(true);
       reset();
       setTimeout(() => setIsSubmitted(false), 5000);
     } catch (error) {
-      console.error('Email sending error:', error);
+      console.error('Form submission error:', error);
       alert('Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);

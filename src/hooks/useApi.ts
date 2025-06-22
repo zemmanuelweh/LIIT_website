@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { apiService } from '../services/api';
+import { programs, news, faqs, testimonials } from '../data/staticData';
 
 export function usePrograms() {
-  const [programs, setPrograms] = useState<any[]>([]);
+  const [programsData, setProgramsData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -10,8 +10,9 @@ export function usePrograms() {
     const fetchPrograms = async () => {
       try {
         setLoading(true);
-        const response = await apiService.getPrograms();
-        setPrograms(response.data || []);
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 500));
+        setProgramsData(programs);
       } catch (err) {
         setError('Failed to fetch programs');
         console.error('Error fetching programs:', err);
@@ -23,11 +24,11 @@ export function usePrograms() {
     fetchPrograms();
   }, []);
 
-  return { programs, loading, error };
+  return { programs: programsData, loading, error };
 }
 
 export function useNews() {
-  const [news, setNews] = useState<any[]>([]);
+  const [newsData, setNewsData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -35,8 +36,9 @@ export function useNews() {
     const fetchNews = async () => {
       try {
         setLoading(true);
-        const response = await apiService.getNews();
-        setNews(response.data || []);
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 500));
+        setNewsData(news);
       } catch (err) {
         setError('Failed to fetch news');
         console.error('Error fetching news:', err);
@@ -48,11 +50,11 @@ export function useNews() {
     fetchNews();
   }, []);
 
-  return { news, loading, error };
+  return { news: newsData, loading, error };
 }
 
 export function useFaqs() {
-  const [faqs, setFaqs] = useState<any[]>([]);
+  const [faqsData, setFaqsData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -60,8 +62,9 @@ export function useFaqs() {
     const fetchFaqs = async () => {
       try {
         setLoading(true);
-        const response = await apiService.getFaqs();
-        setFaqs(response.data || []);
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 500));
+        setFaqsData(faqs);
       } catch (err) {
         setError('Failed to fetch FAQs');
         console.error('Error fetching FAQs:', err);
@@ -73,11 +76,11 @@ export function useFaqs() {
     fetchFaqs();
   }, []);
 
-  return { faqs, loading, error };
+  return { faqs: faqsData, loading, error };
 }
 
 export function useTestimonials() {
-  const [testimonials, setTestimonials] = useState<any[]>([]);
+  const [testimonialsData, setTestimonialsData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -85,8 +88,9 @@ export function useTestimonials() {
     const fetchTestimonials = async () => {
       try {
         setLoading(true);
-        const response = await apiService.getTestimonials();
-        setTestimonials(response.data || []);
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 500));
+        setTestimonialsData(testimonials);
       } catch (err) {
         setError('Failed to fetch testimonials');
         console.error('Error fetching testimonials:', err);
@@ -98,5 +102,5 @@ export function useTestimonials() {
     fetchTestimonials();
   }, []);
 
-  return { testimonials, loading, error };
+  return { testimonials: testimonialsData, loading, error };
 }

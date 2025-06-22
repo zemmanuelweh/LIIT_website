@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Search, BookOpen, CreditCard, Users, Settings } from 'lucide-react';
+import { faqs } from '../data/staticData';
 
 const FAQ: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -15,73 +16,10 @@ const FAQ: React.FC = () => {
     { name: 'Technical', icon: Settings }
   ];
 
-  const faqData = [
-    {
-      category: 'Admissions',
-      question: 'What are the admission requirements?',
-      answer: 'To apply for our programs, you need a high school diploma or equivalent. Some programs may have specific prerequisites. You can apply online through our enrollment page or visit our campus for assistance.'
-    },
-    {
-      category: 'Admissions',
-      question: 'When do applications open?',
-      answer: 'We accept applications year-round with multiple intake periods: January, April, July, and October. We recommend applying at least 4 weeks before your preferred start date.'
-    },
-    {
-      category: 'Admissions',
-      question: 'Can I transfer credits from another institution?',
-      answer: 'Yes, we accept transfer credits from accredited institutions. Our admissions team will evaluate your transcripts and determine which credits can be applied to your program.'
-    },
-    {
-      category: 'Programs',
-      question: 'What is the difference between diploma and certificate programs?',
-      answer: 'Diploma programs are typically 2-3 years and provide comprehensive training in a field. Certificate programs are 6 months to 1 year and focus on specific skills or specializations.'
-    },
-    {
-      category: 'Programs',
-      question: 'Are classes available online?',
-      answer: 'We offer a hybrid learning model with both in-person and online components. Some programs have fully online options, while others require hands-on laboratory work on campus.'
-    },
-    {
-      category: 'Programs',
-      question: 'What support is available for students?',
-      answer: 'We provide comprehensive student support including academic advising, career counseling, tutoring services, library access, and technical support for online learning platforms.'
-    },
-    {
-      category: 'Fees & Payment',
-      question: 'How much do programs cost?',
-      answer: 'Program fees vary by course length and type. Certificate programs range from $1,200-$1,500, while diploma programs range from $2,200-$3,000. Payment plans are available.'
-    },
-    {
-      category: 'Fees & Payment',
-      question: 'Do you offer payment plans?',
-      answer: 'Yes, we offer flexible payment plans to make education affordable. You can pay in installments throughout your program duration. Contact our finance office for details.'
-    },
-    {
-      category: 'Fees & Payment',
-      question: 'Are there scholarships available?',
-      answer: 'We offer merit-based scholarships and need-based financial aid. Scholarships are awarded based on academic performance, community involvement, and financial need.'
-    },
-    {
-      category: 'Technical',
-      question: 'What technology do I need for online classes?',
-      answer: 'You need a computer or tablet with internet access, webcam, and microphone. We provide access to necessary software and learning management systems.'
-    },
-    {
-      category: 'Technical',
-      question: 'How do I access my student portal?',
-      answer: 'After enrollment, you\'ll receive login credentials via email. The student portal allows you to view schedules, grades, make payments, and access course materials.'
-    },
-    {
-      category: 'Technical',
-      question: 'What if I have technical difficulties?',
-      answer: 'Our IT support team is available Monday-Friday 8AM-5PM. You can contact them via email at tech@list.edu.lr or call our main number for assistance.'
-    }
-  ];
-
-  const filteredFAQs = faqData.filter(faq => {
-    const matchesCategory = activeCategory === 'All' || faq.category === activeCategory;
-    const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                          faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredFAQs = faqs.filter(faq => {
+    const matchesCategory = activeCategory === 'All' || faq.attributes.category === activeCategory;
+    const matchesSearch = faq.attributes.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          faq.attributes.answer.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -105,7 +43,7 @@ const FAQ: React.FC = () => {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">Frequently Asked Questions</h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Find answers to common questions about LIST programs, admissions, and services
+              Find answers to common questions about LIIT programs, admissions, and services
             </p>
           </motion.div>
         </div>
@@ -154,7 +92,7 @@ const FAQ: React.FC = () => {
           <div className="space-y-4">
             {filteredFAQs.map((faq, index) => (
               <motion.div
-                key={index}
+                key={faq.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -167,9 +105,9 @@ const FAQ: React.FC = () => {
                 >
                   <div>
                     <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded-full mr-3">
-                      {faq.category}
+                      {faq.attributes.category}
                     </span>
-                    <span className="font-semibold text-gray-900">{faq.question}</span>
+                    <span className="font-semibold text-gray-900">{faq.attributes.question}</span>
                   </div>
                   <ChevronDown
                     className={`h-5 w-5 text-gray-500 transform transition-transform ${
@@ -187,7 +125,7 @@ const FAQ: React.FC = () => {
                       className="overflow-hidden"
                     >
                       <div className="px-6 pb-4 text-gray-600 leading-relaxed">
-                        {faq.answer}
+                        {faq.attributes.answer}
                       </div>
                     </motion.div>
                   )}
