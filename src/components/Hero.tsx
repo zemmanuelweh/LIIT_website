@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Shape Your Future with
-            <span className="block text-yellow-400">Science & Technology</span>
+            <span className="block text-yellow-400">Innovation & Technology</span>
           </h1>
           
           <motion.p
@@ -76,12 +76,12 @@ const Hero: React.FC = () => {
               <div className="text-blue-100">Programs Available</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">98%</div>
+              <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">94%</div>
               <div className="text-blue-100">Success Rate</div>
             </div>
             <div>
-              <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">5+</div>
-              <div className="text-blue-100">Years Excellence</div>
+              <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">20+</div>
+              <div className="text-blue-100">Qualified Instructors</div>
             </div>
           </motion.div>
         </motion.div>
