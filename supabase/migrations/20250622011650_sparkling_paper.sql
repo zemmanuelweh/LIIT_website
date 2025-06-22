@@ -5,7 +5,7 @@
 CREATE DATABASE liit_production;
 
 -- Create user
-CREATE USER liit_user WITH PASSWORD 'your_secure_password';
+CREATE USER liit_user WITH PASSWORD 'Liit@innovation';
 
 -- Grant privileges
 GRANT ALL PRIVILEGES ON DATABASE liit_production TO liit_user;
