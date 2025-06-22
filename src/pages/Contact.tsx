@@ -228,7 +228,7 @@ const Contact: React.FC = () => {
             >
               <div className="h-full min-h-[500px] relative">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31521.68391917788!2d-10.804551199999999!3d6.300774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xf0a029da37b0d9f%3A0x58c0f1f9d3b6c9f8!2sMonrovia%2C%20Liberia!5e0!3m2!1sen!2sus!4v1642685736458!5m2!1sen!2sus"
+                  src="https://maps.app.goo.gl/Yu1ycFCX5CMR9nto9"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
