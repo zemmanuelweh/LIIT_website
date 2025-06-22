@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import { apiService } from '../services/api';
 
 const schema = yup.object({
   name: yup.string().required('Name is required'),
@@ -16,6 +17,7 @@ type FormData = yup.InferType<typeof schema>;
 
 const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>({
     resolver: yupResolver(schema)
@@ -23,19 +25,16 @@ const Contact: React.FC = () => {
 
   const onSubmit = async (data: FormData) => {
     try {
-      // Here you would typically send the data to your backend
-      console.log('Contact form data:', data);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      setIsSubmitting(true);
+      await apiService.submitContact(data);
       setIsSubmitted(true);
       reset();
-      
-      // Reset success message after 3 seconds
-      setTimeout(() => setIsSubmitted(false), 3000);
+      setTimeout(() => setIsSubmitted(false), 5000);
     } catch (error) {
       console.error('Submission error:', error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -43,7 +42,7 @@ const Contact: React.FC = () => {
     {
       icon: MapPin,
       title: 'Address',
-      details: ['123 University Street', 'Monrovia, Liberia', '1000']
+      details: ['Barole Practice Ground', 'Airfield, Monrovia', 'Liberia']
     },
     {
       icon: Phone,
@@ -53,7 +52,7 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: ['info.liit@gmail', 'admissions.liit@gmail']
+      details: ['info.liit@gmail.com', 'admissions.liit@gmail.com']
     },
     {
       icon: Clock,
@@ -128,7 +127,7 @@ const Contact: React.FC = () => {
                   className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg flex items-center"
                 >
                   <CheckCircle className="h-5 w-5 mr-2" />
-                  Thank you! Your message has been sent successfully.
+                  Thank you! Your message has been sent successfully. We'll get back to you soon.
                 </motion.div>
               )}
 
@@ -208,10 +207,11 @@ const Contact: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors flex items-center justify-center"
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-800 transition-colors flex items-center justify-center disabled:opacity-50"
                 >
                   <Send className="h-5 w-5 mr-2" />
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </motion.div>
@@ -232,13 +232,13 @@ const Contact: React.FC = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="LIST Location"
+                  title="LIIT Location"
                   className="absolute inset-0"
                 />
                 <div className="absolute bottom-4 left-4 bg-white p-4 rounded-lg shadow-lg">
-                  <h3 className="font-semibold text-gray-900 mb-1">LIST Campus</h3>
-                  <p className="text-sm text-gray-600">123 University Street</p>
-                  <p className="text-sm text-gray-600">Monrovia, Liberia</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">LIIT Campus</h3>
+                  <p className="text-sm text-gray-600">Barole Practice Ground</p>
+                  <p className="text-sm text-gray-600">Airfield, Monrovia, Liberia</p>
                 </div>
               </div>
             </motion.div>

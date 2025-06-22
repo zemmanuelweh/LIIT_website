@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "students",
+  "info": {
+    "singularName": "student",
+    "pluralName": "students",
+    "displayName": "Student",
+    "description": "Student records for portal access"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "studentId": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "program": {
+      "type": "string",
+      "required": true
+    },
+    "year": {
+      "type": "string",
+      "required": true
+    },
+    "gpa": {
+      "type": "decimal",
+      "min": 0,
+      "max": 4
+    },
+    "enrollmentDate": {
+      "type": "date",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "active",
+        "graduated",
+        "suspended",
+        "withdrawn"
+      ],
+      "default": "active"
+    },
+    "password": {
+      "type": "password",
+      "required": true
+    }
+  }
+}

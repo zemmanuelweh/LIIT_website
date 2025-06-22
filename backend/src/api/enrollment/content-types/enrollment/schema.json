@@ -1,0 +1,95 @@
+{
+  "kind": "collectionType",
+  "collectionName": "enrollments",
+  "info": {
+    "singularName": "enrollment",
+    "pluralName": "enrollments",
+    "displayName": "Enrollment",
+    "description": "Student enrollment applications"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "dateOfBirth": {
+      "type": "date",
+      "required": true
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "male",
+        "female",
+        "other"
+      ],
+      "required": true
+    },
+    "program": {
+      "type": "string",
+      "required": true
+    },
+    "previousEducation": {
+      "type": "enumeration",
+      "enum": [
+        "high-school",
+        "some-college",
+        "associate",
+        "bachelor",
+        "master"
+      ],
+      "required": true
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    },
+    "emergencyContact": {
+      "type": "string",
+      "required": true
+    },
+    "emergencyPhone": {
+      "type": "string",
+      "required": true
+    },
+    "documents": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected",
+        "waitlist"
+      ],
+      "default": "pending"
+    },
+    "applicationDate": {
+      "type": "datetime",
+      "default": "2024-01-01T00:00:00.000Z"
+    }
+  }
+}
