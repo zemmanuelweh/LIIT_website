@@ -11,9 +11,9 @@ const News: React.FC = () => {
   const newsArticles = [
     {
       id: 1,
-      title: 'LIST Launches New Artificial Intelligence Certificate Program',
-      excerpt: 'In response to growing industry demand, LIST introduces a comprehensive AI certificate program covering machine learning, neural networks, and practical applications.',
-      content: 'The Liberia Institute of Science and Technology is proud to announce the launch of our new Artificial Intelligence Certificate Program, designed to meet the growing demand for AI professionals in the region...',
+      title: 'LIIT Launches New Artificial Intelligence Certificate Program',
+      excerpt: 'In response to growing industry demand, LIIT introduces a comprehensive AI certificate program covering machine learning, neural networks, and practical applications.',
+      content: 'The Liberia Institute of Innovation and Technology is proud to announce the launch of our new Artificial Intelligence Certificate Program, designed to meet the growing demand for AI professionals in the region...',
       category: 'Academic',
       author: 'Dr. Patricia Williams',
       date: '2024-01-20',
@@ -23,8 +23,8 @@ const News: React.FC = () => {
     {
       id: 2,
       title: 'Students Win National Innovation Competition',
-      excerpt: 'LIST students took first place in the National Innovation Competition with their groundbreaking mobile health application for rural communities.',
-      content: 'A team of Computer Science students from LIST has won first place in the National Innovation Competition with their innovative mobile health application...',
+      excerpt: 'LIIT students took first place in the National Innovation Competition with their groundbreaking mobile health application for rural communities.',
+      content: 'A team of Computer Science students from LIIT has won first place in the National Innovation Competition with their innovative mobile health application...',
       category: 'Achievement',
       author: 'Prof. James Kollie',
       date: '2024-01-18',
@@ -34,8 +34,8 @@ const News: React.FC = () => {
     {
       id: 3,
       title: 'Partnership with Leading Tech Companies Announced',
-      excerpt: 'LIST partners with major technology companies to provide internship opportunities and job placement for graduates.',
-      content: 'The Liberia Institute of Science and Technology has announced strategic partnerships with several leading technology companies to enhance student opportunities...',
+      excerpt: 'LIIT partners with major technology companies to provide internship opportunities and job placement for graduates.',
+      content: 'The Liberia Institute of Innovation and Technology has announced strategic partnerships with several leading technology companies to enhance student opportunities...',
       category: 'Partnership',
       author: 'Dr. Mary Togba',
       date: '2024-01-15',
@@ -45,7 +45,7 @@ const News: React.FC = () => {
     {
       id: 4,
       title: 'New State-of-the-Art Computer Lab Opens',
-      excerpt: 'LIST unveils a new computer laboratory equipped with the latest technology to enhance hands-on learning experiences.',
+      excerpt: 'LIIT unveils a new computer laboratory equipped with the latest technology to enhance hands-on learning experiences.',
       content: 'Students and faculty celebrated the opening of our new state-of-the-art computer laboratory, featuring the latest hardware and software...',
       category: 'Technology',
       author: 'IT Department',
@@ -56,8 +56,8 @@ const News: React.FC = () => {
     {
       id: 5,
       title: 'Annual Career Fair Connects Students with Employers',
-      excerpt: 'Over 50 companies participated in LIST\'s annual career fair, providing networking and job opportunities for students and graduates.',
-      content: 'The annual LIST Career Fair was a tremendous success, with over 50 companies participating and hundreds of students making valuable connections...',
+      excerpt: 'Over 50 companies participated in LIIT\'s annual career fair, providing networking and job opportunities for students and graduates.',
+      content: 'The annual LIIT Career Fair was a tremendous success, with over 50 companies participating and hundreds of students making valuable connections...',
       category: 'Event',
       author: 'Career Services',
       date: '2024-01-10',
@@ -99,7 +99,7 @@ const News: React.FC = () => {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">News & Updates</h1>
             <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Stay informed about the latest developments, achievements, and opportunities at LIST
+              Stay informed about the latest developments, achievements, and opportunities at LIIT
             </p>
           </motion.div>
         </div>
@@ -277,7 +277,7 @@ const News: React.FC = () => {
               Stay Updated
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter to receive the latest news and updates from LIST
+              Subscribe to our newsletter to receive the latest news and updates from LIIT
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <input
