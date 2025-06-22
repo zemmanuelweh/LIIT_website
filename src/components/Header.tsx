@@ -101,7 +101,7 @@ const Header: React.FC = () => {
               to="/contact"
               className="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition-colors font-medium"
             >
-              Student Portal
+              Get Started Now
             </Link>
           </nav>
 
@@ -136,11 +136,11 @@ const Header: React.FC = () => {
                 </Link>
               ))}
               <Link
-                to="/student-portal"
+                to="/contact"
                 onClick={() => setIsOpen(false)}
                 className="block mt-4 bg-blue-700 text-white px-4 py-2 rounded-lg text-center font-medium"
               >
-                Student Portal
+                Get Started Now
               </Link>
             </motion.nav>
           )}
