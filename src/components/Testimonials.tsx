@@ -55,7 +55,7 @@ const Testimonials: React.FC = () => {
               className="bg-white rounded-xl p-6 shadow-lg"
             >
               <div className="flex items-center mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
+                {[...Array(Math.floor(testimonial.rating))].map((_, i) => (
                   <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                 ))}
               </div>
