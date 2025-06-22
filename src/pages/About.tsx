@@ -177,7 +177,7 @@ const About: React.FC = () => {
               className="prose prose-lg mx-auto text-gray-600"
             >
               <p className="text-xl leading-relaxed mb-6">
-                Founded in 2019, the Liberia Institute of Innovation and Technology (LIIT) emerged from 
+                Founded in 2024, the Liberia Institute of Innovation and Technology (LIIT) emerged from 
                 a vision to bridge the skills gap in Liberia's growing technology sector. Recognizing 
                 the need for practical, industry-relevant education, our founders established LIIT as 
                 a premier institution for technical and vocational training.
