@@ -98,7 +98,7 @@ const Header: React.FC = () => {
             ))}
 
             <Link
-              to="/student-portal"
+              to="/contact"
               className="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition-colors font-medium"
             >
               Student Portal
