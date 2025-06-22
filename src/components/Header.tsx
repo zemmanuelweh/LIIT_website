@@ -98,7 +98,7 @@ const Header: React.FC = () => {
             ))}
 
             <Link
-              to="/contact"
+              to="/enrollment"
               className="bg-blue-700 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition-colors font-medium"
             >
               Get Started Now
@@ -136,7 +136,7 @@ const Header: React.FC = () => {
                 </Link>
               ))}
               <Link
-                to="/contact"
+                to="/enrollment"
                 onClick={() => setIsOpen(false)}
                 className="block mt-4 bg-blue-700 text-white px-4 py-2 rounded-lg text-center font-medium"
               >
