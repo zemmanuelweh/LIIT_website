@@ -194,7 +194,7 @@ const Consulting: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Why Choose LIST Consulting?
+                Why Choose LIIT Consulting?
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start">
