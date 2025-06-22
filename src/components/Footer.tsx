@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
                 <GraduationCap className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold">LIST</h3>
+                <h3 className="text-2xl font-bold">LIIT</h3>
                 <p className="text-gray-300">Liberia Institute of Innovation & Technology</p>
               </div>
             </div>
