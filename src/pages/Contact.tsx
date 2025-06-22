@@ -7,7 +7,7 @@ import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS with your public key
-emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY!);
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY!);
 
 const schema = yup.object({
   name: yup.string().required('Name is required'),
@@ -41,10 +41,10 @@ const Contact: React.FC = () => {
       };
 
       await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID!,
-        process.env.REACT_APP_EMAILJS_SALES_TEMPLATE_ID!,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
+        import.meta.env.VITE_EMAILJS_SALES_TEMPLATE_ID!,
         salesTemplateParams,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY!
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
       );
 
       // Send confirmation email to client
@@ -56,10 +56,10 @@ const Contact: React.FC = () => {
       };
 
       await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID!,
-        process.env.REACT_APP_EMAILJS_CLIENT_TEMPLATE_ID!,
+        import.meta.env.VITE_EMAILJS_SERVICE_ID!,
+        import.meta.env.VITE_EMAILJS_CLIENT_TEMPLATE_ID!,
         clientTemplateParams,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY!
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY!
       );
 
       setIsSubmitted(true);
