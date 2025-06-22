@@ -4,7 +4,10 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react';
-import { apiService } from '../services/api';
+import emailjs from '@emailjs/browser';
+
+// Initialize EmailJS with your public key
+emailjs.init(process.env.REACT_APP_EMAILJS_PUBLIC_KEY!);
 
 const schema = yup.object({
   name: yup.string().required('Name is required'),
@@ -26,12 +29,44 @@ const Contact: React.FC = () => {
   const onSubmit = async (data: FormData) => {
     try {
       setIsSubmitting(true);
-      await apiService.submitContact(data);
+      
+      // Send email to sales team
+      const salesTemplateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        subject: data.subject,
+        message: data.message,
+        to_email: 'sales@yourcompany.com',
+        date: new Date().toLocaleString()
+      };
+
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID!,
+        process.env.REACT_APP_EMAILJS_SALES_TEMPLATE_ID!,
+        salesTemplateParams,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY!
+      );
+
+      // Send confirmation email to client
+      const clientTemplateParams = {
+        to_name: data.name,
+        to_email: data.email,
+        subject: `We've received your message: ${data.subject}`,
+        company_name: 'Your Company'
+      };
+
+      await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID!,
+        process.env.REACT_APP_EMAILJS_CLIENT_TEMPLATE_ID!,
+        clientTemplateParams,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY!
+      );
+
       setIsSubmitted(true);
       reset();
       setTimeout(() => setIsSubmitted(false), 5000);
     } catch (error) {
-      console.error('Submission error:', error);
+      console.error('Email sending error:', error);
       alert('Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
