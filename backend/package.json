@@ -9,12 +9,15 @@
     "start": "strapi start",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.15.5",
-    "@strapi/plugin-users-permissions": "4.15.5",
     "@strapi/plugin-i18n": "4.15.5",
-    "sqlite3": "5.1.6"
+    "@strapi/plugin-users-permissions": "4.15.5",
+    "@strapi/strapi": "^4.15.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^5.3.4",
+    "sqlite3": "5.1.6",
+    "styled-components": "^5.3.11"
   },
   "author": {
     "name": "LIIT Development Team"
