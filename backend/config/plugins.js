@@ -39,7 +39,7 @@ module.exports = ({ env }) => ({
         description: 'API documentation for Liberia Institute of Innovation & Technology',
         contact: {
           name: 'LIIT Development Team',
-          email: 'dev@liit.edu.lr',
+          email: 'dev.liit@gmail.com',
         },
       },
       servers: [
