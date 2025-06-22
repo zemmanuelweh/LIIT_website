@@ -1,15 +1,35 @@
 'use strict';
 
-/**
- * student router
- */
-
-const { createCoreRouter } = require('@strapi/strapi').factories;
-
-const defaultRouter = createCoreRouter('api::student.student');
-
-const customRoutes = {
+module.exports = {
   routes: [
+    // Default routes
+    {
+      method: 'GET',
+      path: '/students',
+      handler: 'student.find',
+    },
+    {
+      method: 'GET',
+      path: '/students/:id',
+      handler: 'student.findOne',
+    },
+    {
+      method: 'POST',
+      path: '/students',
+      handler: 'student.create',
+    },
+    {
+      method: 'PUT',
+      path: '/students/:id',
+      handler: 'student.update',
+    },
+    {
+      method: 'DELETE',
+      path: '/students/:id',
+      handler: 'student.delete',
+    },
+
+    // Your custom login route
     {
       method: 'POST',
       path: '/students/login',
@@ -20,8 +40,3 @@ const customRoutes = {
     },
   ],
 };
-
-// Merge custom routes with default routes
-defaultRouter.routes.push(...customRoutes.routes);
-
-module.exports = defaultRouter;
